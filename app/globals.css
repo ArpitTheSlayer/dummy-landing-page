@@ -10,6 +10,9 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-roboto: Roboto;
+  --text-h1: 3.5rem;
+  --text-h1--line-height: 120%;
+  --text-h1--font-weight: 700;
 }
 
 body {

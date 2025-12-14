@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/assets/svg/logo.svg";
-import Button from "./Button";
+import WhiteButton from "./WhiteButton";
 
 const Navbar = () => {
   return (
     <div className="flex justify-between items-center py-8 px-16">
-      <Image src={logo} alt={"Image of stylish text written as Logo"} />
+      <Image src={logo} alt={"Logo"} />
       <ul className="flex gap-5">
         <li>
           <Link href={"#"}>Home</Link>
@@ -21,7 +21,7 @@ const Navbar = () => {
           <Link href={"#"}>Testimonials</Link>
         </li>
       </ul>
-      <Button text={"Contact"} />
+      <WhiteButton text={"Contact"} />
     </div>
   );
 };
