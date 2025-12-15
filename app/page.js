@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import WhiteButton from "@/components/WhiteButton";
@@ -11,30 +13,39 @@ import orkutLogo from "@/assets/svg/orkut-logo.svg";
 import ebayLogo from "@/assets/svg/ebay-logo.svg";
 import dribleLogo from "@/assets/svg/drible-logo.svg";
 import solarSystem from "@/assets/svg/solar-system.svg";
+import { useRef } from "react";
 
 export default function Home() {
+  const homeRef = useRef();
+  const aboutRef = useRef();
+  const servicesRef = useRef();
+
   return (
     <div>
-      <Navbar />
+      <Navbar ref={{ homeRef, aboutRef, servicesRef }} />
 
       {/* Hero Section */}
-      <div className="w-full min-h-250 absolute top-0 -z-10 flex flex-col justify-center items-center gap-10">
+      <div
+        id="home"
+        ref={homeRef}
+        className="w-full min-h-250 absolute top-0 flex flex-col justify-center items-center gap-10 pointer-events-none"
+      >
         <Image
           src={bgImage}
           alt={"Globe with citylights"}
-          className="w-full h-full object-cover absolute top-0 -z-10"
+          className="w-full h-full object-cover absolute -z-10"
         />
         <h1 className="text-h1 text-center w-4xl">
           Empowering Your Business Through Innovative Technology
         </h1>
-        <div className="flex gap-2.5">
+        <div className="flex gap-2.5 pointer-events-auto">
           <WhiteButton text={"Contact Us"} />
-          <BlackButton text={"About Us"} />
+          <BlackButton text={"About Us"} ref={aboutRef} />
         </div>
       </div>
 
       {/* About Section */}
-      <div className="mt-230 px-44">
+      <div id="about" ref={aboutRef} className="mt-230 px-44 scroll-mt-30">
         <h2 className="text-2xl text-gray-400 -ml-32 mb-4">About Us</h2>
         <p className="text-[2.625rem] leading-[190%]">
           Transforming ideas into the digital world. Meet company name
@@ -66,7 +77,7 @@ export default function Home() {
       </div>
 
       {/* Services Section */}
-      <div className="px-44 mb-24">
+      <div id="services" ref={servicesRef} className="px-44 mb-24 scroll-mt-30">
         <h2 className="text-2xl text-gray-400 -ml-32 mb-4">Services</h2>
         <div className="grid grid-cols-3 gap-5">
           <div className="bg-gray-900 h-110 px-10 flex flex-col gap-6 justify-center">
@@ -173,6 +184,7 @@ export default function Home() {
       <div className="h-128 relative">
         <Image
           src={solarSystem}
+          alt="Solar System"
           className="w-full h-full opacity-10 object-cover"
         />
         <div className="w-2xl absolute flex flex-col items-center gap-8 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">

@@ -1,24 +1,40 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/assets/svg/logo.svg";
 import WhiteButton from "./WhiteButton";
 
-const Navbar = () => {
+const Navbar = ({ ref }) => {
+  const handleClick = (e, ref) => {
+    e.preventDefault();
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="flex justify-between items-center py-8 px-16">
+    <div className="flex justify-between items-center py-8 px-16 sticky top-0 bg-black">
       <Image src={logo} alt={"Logo"} />
       <ul className="flex gap-5">
         <li>
-          <Link href={"#"}>Home</Link>
+          <Link href={"#home"} onClick={(e) => handleClick(e, ref.homeRef)}>
+            Home
+          </Link>
         </li>
         <li>
-          <Link href={"#"}>About us</Link>
+          <Link href={"#about"} onClick={(e) => handleClick(e, ref.aboutRef)}>
+            About us
+          </Link>
         </li>
         <li>
-          <Link href={"#"}>Services</Link>
+          <Link
+            href={"#services"}
+            onClick={(e) => handleClick(e, ref.servicesRef)}
+          >
+            Services
+          </Link>
         </li>
         <li>
-          <Link href={"#"}>Testimonials</Link>
+          <Link href={"#"}>Blogs</Link>
         </li>
       </ul>
       <WhiteButton text={"Contact"} />
