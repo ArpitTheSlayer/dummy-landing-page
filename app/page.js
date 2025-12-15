@@ -18,6 +18,7 @@ import ebayLogo from "@/assets/svg/ebay-logo.svg";
 import dribleLogo from "@/assets/svg/drible-logo.svg";
 import solarSystem from "@/assets/svg/solar-system.svg";
 import { useRef } from "react";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const homeRef = useRef();
@@ -264,7 +265,7 @@ export default function Home() {
       <div
         id="contact"
         ref={contactRef}
-        className="flex gap-20 px-44 items-center"
+        className="flex gap-20 px-44 mb-24 items-center"
       >
         <Image
           src={abstractGlass3D}
@@ -325,6 +326,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
