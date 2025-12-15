@@ -12,7 +12,7 @@ const Navbar = ({ ref }) => {
   };
 
   return (
-    <div className="flex justify-between items-center py-8 px-16 sticky top-0 bg-black">
+    <div className="flex justify-between items-center py-8 px-16 sticky top-0 bg-black z-50">
       <Image src={logo} alt={"Logo"} />
       <ul className="flex gap-5">
         <li>
@@ -34,10 +34,12 @@ const Navbar = ({ ref }) => {
           </Link>
         </li>
         <li>
-          <Link href={"#"}>Blogs</Link>
+          <Link href={"#blogs"} onClick={(e) => handleClick(e, ref.blogsRef)}>
+            Blogs
+          </Link>
         </li>
       </ul>
-      <WhiteButton text={"Contact"} />
+      <WhiteButton text={"Contact"} ref={ref.contactRef} />
     </div>
   );
 };

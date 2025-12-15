@@ -9,6 +9,7 @@ import bgImage2 from "@/assets/images/bg-image-2.png";
 import bgImage3 from "@/assets/images/bg-image-3.jpg";
 import bgImage4 from "@/assets/images/bg-image-4.png";
 import bgImage5 from "@/assets/images/bg-image-5.png";
+import abstractGlass3D from "@/assets/images/abstract-glass-3d.png";
 import whiteArrowButton from "@/assets/svg/white-arrow-button.svg";
 import blackArrowButton from "@/assets/svg/black-arrow-button.svg";
 import googleLogo from "@/assets/svg/google-logo.svg";
@@ -22,10 +23,12 @@ export default function Home() {
   const homeRef = useRef();
   const aboutRef = useRef();
   const servicesRef = useRef();
+  const blogsRef = useRef();
+  const contactRef = useRef();
 
   return (
     <div>
-      <Navbar ref={{ homeRef, aboutRef, servicesRef }} />
+      <Navbar ref={{ homeRef, aboutRef, servicesRef, blogsRef, contactRef }} />
 
       {/* Hero Section */}
       <div
@@ -42,7 +45,7 @@ export default function Home() {
           Empowering Your Business Through Innovative Technology
         </h1>
         <div className="flex gap-2.5 pointer-events-auto">
-          <WhiteButton text={"Contact Us"} />
+          <WhiteButton text={"Contact Us"} ref={contactRef} />
           <BlackButton text={"About Us"} ref={aboutRef} />
         </div>
       </div>
@@ -194,12 +197,12 @@ export default function Home() {
           <h2 className="text-5xl font-bold text-center">
             Have a technology challenge? We have the solution.
           </h2>
-          <BlackButton text={"Contact Us"} />
+          <BlackButton text={"Contact Us"} ref={contactRef} />
         </div>
       </div>
 
       {/* Blogs Section */}
-      <div className="px-44">
+      <div id="blogs" ref={blogsRef} className="px-44 mb-24">
         <h2 className="text-2xl text-gray-400 -ml-32 mb-16">Blogs</h2>
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
           <div className="row-span-2 bg-white text-black flex flex-col">
@@ -253,6 +256,72 @@ export default function Home() {
                 alt="White arrow with black background pointing up"
               />
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Contact Section */}
+      <div
+        id="contact"
+        ref={contactRef}
+        className="flex gap-20 px-44 items-center"
+      >
+        <Image
+          src={abstractGlass3D}
+          alt="Abstract 3D graphic of glass ball"
+          className="flex-1"
+        />
+        <div className="flex-1">
+          <h2 className="text-3xl font-bold leading-6 mb-8">
+            Let's Collaborate Now!
+          </h2>
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col">
+              <label htmlFor="full-name" className="text-xl font-medium">
+                Full Name
+              </label>
+              <input
+                id="full-name"
+                type="text"
+                placeholder="Input Your Name"
+                className="bg-white text-black placeholder:text-black p-2"
+              />
+            </div>
+            <div className="flex gap-4">
+              <div className="flex flex-col flex-1">
+                <label htmlFor="email" className="text-xl font-medium">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  type="text"
+                  placeholder="Input Your Email"
+                  className="bg-white text-black placeholder:text-black p-2"
+                />
+              </div>
+              <div className="flex flex-col flex-1">
+                <label htmlFor="date" className="text-xl font-medium">
+                  Date
+                </label>
+                <input
+                  id="email"
+                  type="date"
+                  className="bg-white text-black p-2"
+                />
+              </div>
+            </div>
+            <div className="flex flex-col mb-4">
+              <label htmlFor="message" className="text-xl font-medium">
+                Message
+              </label>
+              <textarea
+                id="message"
+                placeholder="Enter Your Message Here"
+                rows={4}
+                className="bg-white text-black placeholder:text-black p-2"
+              />
+            </div>
+            <WhiteButton text={"Contact Us"} />
           </div>
         </div>
       </div>
