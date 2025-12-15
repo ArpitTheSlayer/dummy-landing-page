@@ -6,6 +6,9 @@ import WhiteButton from "@/components/WhiteButton";
 import BlackButton from "@/components/BlackButton";
 import bgImage from "@/assets/images/bg-image.png";
 import bgImage2 from "@/assets/images/bg-image-2.png";
+import bgImage3 from "@/assets/images/bg-image-3.jpg";
+import bgImage4 from "@/assets/images/bg-image-4.png";
+import bgImage5 from "@/assets/images/bg-image-5.png";
 import whiteArrowButton from "@/assets/svg/white-arrow-button.svg";
 import blackArrowButton from "@/assets/svg/black-arrow-button.svg";
 import googleLogo from "@/assets/svg/google-logo.svg";
@@ -181,7 +184,7 @@ export default function Home() {
       </div>
 
       {/* Call To Action Section */}
-      <div className="h-128 relative">
+      <div className="h-128 relative mb-24">
         <Image
           src={solarSystem}
           alt="Solar System"
@@ -192,6 +195,65 @@ export default function Home() {
             Have a technology challenge? We have the solution.
           </h2>
           <BlackButton text={"Contact Us"} />
+        </div>
+      </div>
+
+      {/* Blogs Section */}
+      <div className="px-44">
+        <h2 className="text-2xl text-gray-400 -ml-32 mb-16">Blogs</h2>
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
+          <div className="row-span-2 bg-white text-black flex flex-col">
+            <Image
+              src={bgImage3}
+              alt="Woman using computer"
+              className="w-full flex-1 object-cover"
+            />
+            <div className="px-4 py-8">
+              <h3 className="text-2xl font-medium leading-[140%] mb-4">
+                Top 5 New Tech Trend is change the world....
+              </h3>
+              <p className="text-2xl leading-[140%] text-gray-500 mb-4">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s .....
+              </p>
+              <BlackButton text={"Read More.."} />
+            </div>
+          </div>
+          <div className="relative text-black">
+            <div className="absolute top-0 bottom-0 left-0 right-0 bg-linear-0 from-white to-transparent"></div>
+            <Image
+              src={bgImage4}
+              alt="Man using VR headset"
+              className="w-full h-full object-cover"
+            />
+            <div className="flex w-full p-4 absolute bottom-0 justify-between">
+              <h3 className="text-xl font-medium">
+                AR and VR technology is rapidly growing...
+              </h3>
+              <Image
+                src={blackArrowButton}
+                alt="White arrow with black background pointing up"
+              />
+            </div>
+          </div>
+          <div className="relative text-black">
+            <div className="absolute top-0 bottom-0 left-0 right-0 bg-linear-0 from-white to-transparent"></div>
+            <Image
+              src={bgImage5}
+              alt="Graphic of laptop"
+              className="w-full h-full object-cover"
+            />
+            <div className="flex w-full p-4 absolute bottom-0 justify-between">
+              <h3 className="text-xl font-medium">
+                Why 3D Elements are important in your project...
+              </h3>
+              <Image
+                src={blackArrowButton}
+                alt="White arrow with black background pointing up"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

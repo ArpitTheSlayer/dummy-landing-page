@@ -2,7 +2,9 @@
 
 const BlackButton = ({ text, ref }) => {
   const handleClick = () => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
+    if (ref) {
+      ref.current?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
