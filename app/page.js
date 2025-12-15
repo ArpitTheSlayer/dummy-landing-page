@@ -35,26 +35,30 @@ export default function Home() {
       <div
         id="home"
         ref={homeRef}
-        className="w-full min-h-250 absolute top-0 flex flex-col justify-center items-center gap-10 pointer-events-none"
+        className="w-full min-h-250 absolute top-0 flex flex-col justify-center lg:items-center gap-10 pointer-events-none"
       >
         <Image
           src={bgImage}
           alt={"Globe with citylights"}
           className="w-full h-full object-cover absolute -z-10"
         />
-        <h1 className="text-h1 text-center w-4xl">
+        <h1 className="text-3xl lg:text-h1 text-left lg:text-center w-fit lg:w-4xl px-5 lg:px-0">
           Empowering Your Business Through Innovative Technology
         </h1>
-        <div className="flex gap-2.5 pointer-events-auto">
+        <div className="flex px-5 lg:px-0 gap-2.5 pointer-events-auto">
           <WhiteButton text={"Contact Us"} ref={contactRef} />
           <BlackButton text={"About Us"} ref={aboutRef} />
         </div>
       </div>
 
       {/* About Section */}
-      <div id="about" ref={aboutRef} className="mt-230 px-44 scroll-mt-30">
-        <h2 className="text-2xl text-gray-400 -ml-32 mb-4">About Us</h2>
-        <p className="text-[2.625rem] leading-[190%]">
+      <div
+        id="about"
+        ref={aboutRef}
+        className="mt-230 px-8 lg:px-44 scroll-mt-30"
+      >
+        <h2 className="text-2xl text-gray-400 lg:-ml-32 mb-4">About Us</h2>
+        <p className="text-3xl lg:text-[2.625rem] leading-[190%]">
           Transforming ideas into the digital world. Meet company name
           Technologies. We're dedicated to{" "}
           <span className="text-gray-400 opacity-70">
@@ -63,30 +67,42 @@ export default function Home() {
             landscape.
           </span>
         </p>
-        <div className="flex justify-between gap-20 my-32">
-          <div className="flex-1">
-            <h3 className="text-2xl text-gray-400">Clients</h3>
-            <span className="font-semibold text-[5rem]">37 +</span>
+        <div className="flex justify-between gap-20 my-32 flex-wrap">
+          <div className="flex-1 min-w-32 lg:min-w-3xs">
+            <h3 className="text-base lg:text-2xl mb-4 lg:mb-0 text-gray-400">
+              Clients
+            </h3>
+            <span className="font-semibold text-5xl lg:text-[5rem]">37 +</span>
           </div>
-          <div className="flex-1">
-            <h3 className="text-2xl text-gray-400">Years Experience</h3>
-            <span className="font-semibold text-[5rem]">5 +</span>
+          <div className="flex-1 min-w-32 lg:min-w-3xs">
+            <h3 className="text-base lg:text-2xl mb-4 lg:mb-0 text-gray-400">
+              Years Experience
+            </h3>
+            <span className="font-semibold text-5xl lg:text-[5rem]">5 +</span>
           </div>
-          <div className="flex-1">
-            <h3 className="text-2xl text-gray-400">Projects</h3>
-            <span className="font-semibold text-[5rem]">88 +</span>
+          <div className="flex-1 min-w-32 lg:min-w-3xs">
+            <h3 className="text-base lg:text-2xl mb-4 lg:mb-0 text-gray-400">
+              Projects
+            </h3>
+            <span className="font-semibold text-5xl lg:text-[5rem]">88 +</span>
           </div>
-          <div className="flex-1">
-            <h3 className="text-2xl text-gray-400">Awards</h3>
-            <span className="font-semibold text-[5rem]">2 +</span>
+          <div className="flex-1 min-w-32 lg:min-w-3xs">
+            <h3 className="text-base lg:text-2xl mb-4 lg:mb-0 text-gray-400">
+              Awards
+            </h3>
+            <span className="font-semibold text-5xl lg:text-[5rem]">2 +</span>
           </div>
         </div>
       </div>
 
       {/* Services Section */}
-      <div id="services" ref={servicesRef} className="px-44 mb-24 scroll-mt-30">
-        <h2 className="text-2xl text-gray-400 -ml-32 mb-4">Services</h2>
-        <div className="grid grid-cols-3 gap-5">
+      <div
+        id="services"
+        ref={servicesRef}
+        className="px-8 lg:px-44 mb-24 scroll-mt-30"
+      >
+        <h2 className="text-2xl text-gray-400 lg:-ml-32 mb-4">Services</h2>
+        <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-5">
           <div className="bg-gray-900 h-110 px-10 flex flex-col gap-6 justify-center">
             <span className="text-3xl leading-[140%]">
               Software Development
@@ -175,11 +191,11 @@ export default function Home() {
       </div>
 
       {/* Partners Section */}
-      <div className="px-44 mb-24">
-        <h2 className="text-2xl text-center text-gray-400 mb-4">
+      <div className="px-8 lg:px-44 mb-24">
+        <h2 className="text-2xl text-center text-gray-400 mb-8">
           My Partner Worldwide
         </h2>
-        <div className="flex justify-between">
+        <div className="flex justify-between gap-8 flex-wrap">
           <Image src={googleLogo} alt="Google Logo" />
           <Image src={orkutLogo} alt="Orkut Logo" />
           <Image src={ebayLogo} alt="Ebay Logo" />
@@ -194,8 +210,8 @@ export default function Home() {
           alt="Solar System"
           className="w-full h-full opacity-10 object-cover"
         />
-        <div className="w-2xl absolute flex flex-col items-center gap-8 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <h2 className="text-5xl font-bold text-center">
+        <div className="w-full lg:w-2xl absolute flex flex-col items-center gap-8 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <h2 className="text-2xl lg:text-5xl px-8 lg:px-0 font-bold text-center">
             Have a technology challenge? We have the solution.
           </h2>
           <BlackButton text={"Contact Us"} ref={contactRef} />
@@ -203,8 +219,12 @@ export default function Home() {
       </div>
 
       {/* Blogs Section */}
-      <div id="blogs" ref={blogsRef} className="px-44 mb-24">
-        <h2 className="text-2xl text-gray-400 -ml-32 mb-16">Blogs</h2>
+      <div
+        id="blogs"
+        ref={blogsRef}
+        className="px-8 lg:px-44 mb-24 scroll-mt-30"
+      >
+        <h2 className="text-2xl text-gray-400 lg:-ml-32 mb-16">Blogs</h2>
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
           <div className="row-span-2 bg-white text-black flex flex-col">
             <Image
@@ -213,10 +233,10 @@ export default function Home() {
               className="w-full flex-1 object-cover"
             />
             <div className="px-4 py-8">
-              <h3 className="text-2xl font-medium leading-[140%] mb-4">
+              <h3 className="text-xl lg:text-2xl font-medium leading-[140%] mb-4">
                 Top 5 New Tech Trend is change the world....
               </h3>
-              <p className="text-2xl leading-[140%] text-gray-500 mb-4">
+              <p className="text-xl lg:text-2xl leading-[140%] text-gray-500 mb-4">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s .....
@@ -232,7 +252,7 @@ export default function Home() {
               className="w-full h-full object-cover"
             />
             <div className="flex w-full p-4 absolute bottom-0 justify-between">
-              <h3 className="text-xl font-medium">
+              <h3 className="text-base lg:text-xl font-medium">
                 AR and VR technology is rapidly growing...
               </h3>
               <Image
@@ -249,7 +269,7 @@ export default function Home() {
               className="w-full h-full object-cover"
             />
             <div className="flex w-full p-4 absolute bottom-0 justify-between">
-              <h3 className="text-xl font-medium">
+              <h3 className="text-base lg:text-xl font-medium">
                 Why 3D Elements are important in your project...
               </h3>
               <Image
@@ -265,12 +285,12 @@ export default function Home() {
       <div
         id="contact"
         ref={contactRef}
-        className="flex gap-20 px-44 mb-24 items-center"
+        className="flex gap-20 px-8 lg:px-44 mb-24 items-center scroll-mt-30"
       >
         <Image
           src={abstractGlass3D}
           alt="Abstract 3D graphic of glass ball"
-          className="flex-1"
+          className="flex-1 hidden xl:block"
         />
         <div className="flex-1">
           <h2 className="text-3xl font-bold leading-6 mb-8">
@@ -288,7 +308,7 @@ export default function Home() {
                 className="bg-white text-black placeholder:text-black p-2"
               />
             </div>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex flex-col flex-1">
                 <label htmlFor="email" className="text-xl font-medium">
                   Email

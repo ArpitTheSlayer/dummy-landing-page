@@ -9,15 +9,15 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="px-16 mb-16">
-      <div className="grid grid-cols-5 mb-24 gap-16">
-        <div className="col-span-2 flex flex-col gap-4">
+    <div className="px-8 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 mb-24 gap-16">
+        <div className="md:col-span-2 flex flex-col gap-4">
           <Image src={logo} alt="Logo" />
           <p>
             Subscribe to our newsletter for the latest updates on features and
             releases.
           </p>
-          <div className="flex gap-4 w-full">
+          <div className="flex flex-col sm:flex-row gap-4 w-full">
             <input
               type="text"
               placeholder="Your email here"
@@ -78,7 +78,7 @@ const Footer = () => {
         </div>
       </div>
       <hr />
-      <div className="mt-8 flex justify-between">
+      <div className="mt-8 flex flex-col md:flex-row gap-4 justify-between">
         <p className="text-sm">
           © 2025{" "}
           <Link
@@ -89,7 +89,7 @@ const Footer = () => {
           </Link>
           . All rights reserved.
         </p>
-        <ul className="flex gap-4">
+        <ul className="flex flex-col sm:flex-row gap-4">
           <li className="text-sm">Privacy Policy</li>
           <li className="text-sm">Terms of Service</li>
           <li className="text-sm">Cookie Settings</li>
